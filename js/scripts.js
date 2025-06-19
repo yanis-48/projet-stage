@@ -1,10 +1,19 @@
 function submitPlayer() {
     
     const playerList = document.getElementsByClassName("player");
+
+    let playerNames = [];
+
+    for (const player of playerList) {
+        playerNames.push(player.value)
+    }
+
+    console.log(playerNames);
+    
     
     let html = "";
    
-    for (let index = 0; index < playerList.length; index++) { 
+    for (let index = 0; index < playerNames.length; index++) { 
         var max = 809;
         let random = Math.floor(Math.random() * max);
         
@@ -26,7 +35,7 @@ function submitPlayer() {
                  src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${randomToString}.png" 
                  alt="Card image cap">
             <div class="card-body">
-                <h5>${playerList[index].value}</h5>
+                <h5>${playerNames[index]}</h5>
                 <p>Bla bla bla bla bla bla bla bla bla bla bla bla 
                 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
                 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
